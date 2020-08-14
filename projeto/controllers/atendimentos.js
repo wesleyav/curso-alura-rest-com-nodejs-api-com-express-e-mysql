@@ -10,7 +10,7 @@ module.exports = app => {
         const id = parseInt(req.params.id)
 
         Atendimento.buscaPorId(id, res)
-        
+
     })
 
     app.post('/atendimentos', (req, res) => {
@@ -25,6 +25,12 @@ module.exports = app => {
         const valores = req.body
 
         Atendimento.altera(id, valores, res)
+    })
+
+    app.delete('/atendimentos/:id', (req, res) => {
+        const id = parseInt(req.params.id)
+
+        Atendimento.deleta(id, res)
     })
 
 }
